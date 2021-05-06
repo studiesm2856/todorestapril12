@@ -1,13 +1,13 @@
 resource "azurerm_resource_group" "example" {
-  name     = "valuepoint-rg"
+  name     = "valuepoint1-rg"
   location = "West Europe"
 }
 
 resource "azurerm_kubernetes_cluster" "example" {
-  name                = "valuepoint-aks1"
+  name                = "valuepoint-aks2"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  dns_prefix          = "valuepoint1"
+  dns_prefix          = "valuepoint2"
 
   default_node_pool {
     name       = "default"
