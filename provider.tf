@@ -1,5 +1,13 @@
-provider "google" {
-  credentials = file("/var/lib/jenkins/sc.json")
-  project     = "vocal-camera-264620"
-  region      = "us-central1"
+terraform {
+ required_providers {
+   azurerm = {
+     source  = "hashicorp/azurerm"
+     version = "=2.46.0"
+   }
+ }
+}
+ 
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+ features {}
 }
