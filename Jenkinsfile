@@ -24,7 +24,7 @@ echo "JOB_URL" :: $JOB_URL'''
 
         stage('SCM') {
           steps {
-            sh 'git https://github.com/studiesm2856/todorestapril12'
+            sh 'git 'https://github.com/studiesm2856/todorestapril12.git'
           }
         }
 
