@@ -21,9 +21,8 @@ echo "JOB_URL" :: $JOB_URL'''
     }
 
     stage('SCM') {
-      steps {
-        sh 'git \'https://gitlab.com/studiesm2856/maven-demo\''
-      }
+      git 'https://github.com/studiesm2856/spock-lizard-docker'
+     
     }
 
   }
