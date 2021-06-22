@@ -20,11 +20,5 @@ echo "JOB_URL" :: $JOB_URL'''
       }
     }
 
-    stage('SCM') {
-      Steps {
-      git 'https://github.com/studiesm2856/spock-lizard-docker'
-      }
-    }
-
   }
 }
