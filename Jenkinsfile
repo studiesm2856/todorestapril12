@@ -2,8 +2,10 @@ pipeline {
   agent any
   stages {
     stage('variables') {
-      steps {
-        sh '''echo "BUILD_NUMBER" :: $BUILD_NUMBER
+      parallel {
+        stage('variables') {
+          steps {
+            sh '''echo "BUILD_NUMBER" :: $BUILD_NUMBER
 echo "BUILD_ID" :: $BUILD_ID
 echo "BUILD_DISPLAY_NAME" :: $BUILD_DISPLAY_NAME
 echo "JOB_NAME" :: $JOB_NAME
@@ -17,6 +19,15 @@ echo "JENKINS_HOME" :: $JENKINS_HOME
 echo "JENKINS_URL" :: $JENKINS_URL
 echo "BUILD_URL" ::$BUILD_URL
 echo "JOB_URL" :: $JOB_URL'''
+          }
+        }
+
+        stage('SCM') {
+          steps {
+            sh 'git https://github.com/studiesm2856/todorestapril12'
+          }
+        }
+
       }
     }
 
